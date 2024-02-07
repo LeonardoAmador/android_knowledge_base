@@ -27,7 +27,12 @@ public class MainActivity extends AppCompatActivity {
         ltvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Item " + ++position + "clicked", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Item " + ++position + "clicked", Toast.LENGTH_SHORT).show();
+
+                Intent openItemDetail = new Intent(MainActivity.this, itemDetailActivity.class);
+
+                openItemDetail.putExtra("itemIdClicked", position);
+                startActivity(openItemDetail);
             }
         });
     }
